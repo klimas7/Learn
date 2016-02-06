@@ -34,7 +34,7 @@ public class AddTableTest
     int[] tabA = new int[]{1, 2, 3, 4};
     int[] tabB = new int[]{1, 2, 3, 8};
 
-    int[] tabC = new int[]{2, 4, 7, 2};
+    int[] tabC = new int[]{2, 5, 7, 2};
 
     assertTrue(Arrays.equals(tabC,AddTable.add(tabA,tabB)));
   }
