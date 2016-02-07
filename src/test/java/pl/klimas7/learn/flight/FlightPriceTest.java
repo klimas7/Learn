@@ -1,12 +1,12 @@
 package pl.klimas7.learn.flight;
 
+import org.testng.annotations.Test;
+
 import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.Test;
 
 public class FlightPriceTest
 {
@@ -32,7 +32,7 @@ public class FlightPriceTest
     assertEquals(true,test1.getTaxs().size() == 0);
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expectedExceptions = IllegalArgumentException.class)
   public void testFlightPriceThrow()
   {
     FlightPrice test3 = new FlightPrice(-1.0F);
@@ -64,7 +64,7 @@ public class FlightPriceTest
 
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expectedExceptions = IllegalArgumentException.class)
   public void testFlightPrice3Throws()
   {
     FlightPrice test1 = new FlightPrice(1.0F,-1.0F);
@@ -155,7 +155,7 @@ public class FlightPriceTest
     assertEquals(Integer.valueOf(3),test.getCurrencyScale());
 
   }
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expectedExceptions = IllegalArgumentException.class)
   public void testRecalculateFlightPriceUsenigPriceLimitThrow()
   {
     FlightPrice test = new FlightPrice(10.0F,5.0F,5.0F);

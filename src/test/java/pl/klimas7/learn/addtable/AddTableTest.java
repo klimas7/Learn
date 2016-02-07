@@ -1,10 +1,10 @@
 package pl.klimas7.learn.addtable;
 
+import org.testng.annotations.Test;
+
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
-
-import org.junit.Test;
 
 public class AddTableTest
 {
