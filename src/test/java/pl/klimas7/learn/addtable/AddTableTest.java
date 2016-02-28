@@ -1,5 +1,6 @@
 package pl.klimas7.learn.addtable;
 
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -17,12 +18,13 @@ public class AddTableTest
   @Test
   public void addTestA()
   {
+
     int[] tabA = new int[]{1, 2, 3, 4};
     int[] tabB = new int[]{1, 2, 3, 4};
 
     int[] tabC = new int[]{2, 4, 6, 8};
-
-    assertTrue(Arrays.equals(tabC,AddTable.add(tabA,tabB)));
+    throw new SkipException("ddd");
+    //assertTrue(Arrays.equals(tabC,AddTable.add(tabA,tabB)));
   }
   /*
    *   1234
