@@ -2,11 +2,11 @@ package pl.klimas7.learn.flight;
 
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.testng.AssertJUnit.assertEquals;
 
 public class FlightPriceTest
 {
