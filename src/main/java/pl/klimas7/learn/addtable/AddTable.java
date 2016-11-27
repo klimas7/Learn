@@ -2,6 +2,7 @@ package pl.klimas7.learn.addtable;
 
 /**
  * Simple comment
+ * part 2
  */
 public class AddTable
 {
