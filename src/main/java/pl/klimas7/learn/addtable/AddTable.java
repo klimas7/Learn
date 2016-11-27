@@ -1,5 +1,8 @@
 package pl.klimas7.learn.addtable;
 
+/**
+ * Simple comment
+ */
 public class AddTable
 {
   public static int[] add(int[] tabA, int[] tabB)
