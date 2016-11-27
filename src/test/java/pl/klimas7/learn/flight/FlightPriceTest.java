@@ -1,8 +1,9 @@
 package pl.klimas7.learn.flight;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
