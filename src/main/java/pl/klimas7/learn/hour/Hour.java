@@ -11,8 +11,7 @@ public class Hour {
     public LocalTime getMaxHour(Integer... argss) throws IllegalArgumentException {
         validate(argss);
 
-        List<Integer> data = new ArrayList();
-        data.addAll(Arrays.asList(argss));
+        List<Integer> data = new ArrayList<>(Arrays.asList(argss));
 
         Integer majorHour = getAndRemove(data, i -> i <= 2);
 
