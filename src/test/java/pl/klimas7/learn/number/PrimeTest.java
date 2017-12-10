@@ -9,6 +9,14 @@ import org.junit.Test;
 
 public class PrimeTest {
     @Test
+    public void testGetPrimes10() {
+        Prime prime = new Prime();
+
+        List<Integer> primes = prime.getPrimes(10);
+        Assert.assertArrayEquals(primes.toArray(), new Integer[]{2, 3, 5, 7});
+    }
+
+    @Test
     public void testGetPrimes30() {
         Prime prime = new Prime();
 

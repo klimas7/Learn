@@ -18,9 +18,8 @@ public class Prime {
 
         boolean endSieve = false;
         do {
-            for (int i = currentPrime + currentPrime; i <= maxNumber; ) {
+            for (int i = currentPrime + currentPrime; i <= maxNumber; i += currentPrime) {
                 sieve[i] = true;
-                i += currentPrime;
             }
             for (int i = currentPrime + 1; i <= maxNumber; i++) {
                 if (!sieve[i]) {
@@ -30,7 +29,6 @@ public class Prime {
                 }
                 if (i == maxNumber) {
                     endSieve = true;
-                    break;
                 }
             }
         } while (!endSieve);
