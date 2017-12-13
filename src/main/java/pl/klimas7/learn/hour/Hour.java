@@ -3,7 +3,7 @@ package pl.klimas7.learn.hour;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -12,6 +12,7 @@ public class Hour {
         validate(argss);
 
         List<Integer> data = new ArrayList<>(Arrays.asList(argss));
+        Collections.sort(data, Collections.reverseOrder());
 
         Integer majorHour = getAndRemove(data, i -> i <= 2);
 
@@ -27,7 +28,6 @@ public class Hour {
 
     private Integer getAndRemove(List<Integer> data, Predicate<Integer> filter) {
         Integer element = data.stream()
-                .sorted(Comparator.reverseOrder())
                 .filter(filter)
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
