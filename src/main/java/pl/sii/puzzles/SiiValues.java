@@ -16,6 +16,7 @@ public class SiiValues {
     }
 
     public static int max(Value a, Value b) {
-        return Math.max(a.name().length(), b.name().length());
+        return Math.max(a.name().length(), b.name().length()); //Bad
+        //return Integer.compare(a.name().length(), b.name().length()); //Good
     }
 }
