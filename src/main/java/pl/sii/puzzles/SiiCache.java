@@ -12,7 +12,8 @@ public class SiiCache {
     }
 
     private static SiiValue getFromCache(String key, String value) {
-        return cache.putIfAbsent(key, new SiiValue(value));
+        return cache.putIfAbsent(key, new SiiValue(value)); //Bad
+        //return cache.computeIfAbsent(key, v -> new SiiValue(value)); //Good
     }
 
     public static void print(SiiValue... args) {
