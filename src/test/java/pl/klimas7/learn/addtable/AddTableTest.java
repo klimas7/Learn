@@ -22,7 +22,7 @@ public class AddTableTest
     int[] tabA = new int[]{1, 2, 3, 4};
     int[] tabB = new int[]{1, 2, 3, 4};
 
-    int[] tabC = new int[]{2, 4, 6, 8};
+    int[] tabC = new int[]{2, 4, 6, 9};
     //throw new SkipException("ddd");
     assertTrue(Arrays.equals(tabC,AddTable.add(tabA,tabB)));
   }
