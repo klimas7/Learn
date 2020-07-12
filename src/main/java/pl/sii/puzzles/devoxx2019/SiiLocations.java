@@ -16,15 +16,16 @@ public class SiiLocations {
                 new Location("Wroclaw", 478),
                 new Location("Cracow", 504));
 
-        locations.add(new Location("Rzeszow", 50));
-        locations.add(new Location("Bydgoszcz", 36));
+        //locations.add(new Location("Rzeszow", 50));
+        //locations.add(new Location("Bydgoszcz", 36));
 
         Stream<Location> locationStream = locations.stream();
 
         System.out.println("Sii locations: " + locationStream.count());
-        locationStream.max(comparing(l -> l.workers)).ifPresent(l -> System.out.println(l.name));
+        locationStream.max(comparing(l -> l.workers))
+                      .ifPresent(l -> System.out.println(l.name));
     }
-
+    //Lombok
     @AllArgsConstructor
     static class Location {
         String name;
