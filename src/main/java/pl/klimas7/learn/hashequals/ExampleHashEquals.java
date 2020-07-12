@@ -47,8 +47,10 @@ public class ExampleHashEquals {
 
     @Override
     public int hashCode() {
-        int result = stringValue != null ? stringValue.hashCode() : 0;
-        result = 31 * result + (integerValue != null ? integerValue.hashCode() : 0);
-        return result;
+        return 1;
+
+//        int result = stringValue != null ? stringValue.hashCode() : 0;
+//        result = 31 * result + (integerValue != null ? integerValue.hashCode() : 0);
+//        return result;
     }
 }
