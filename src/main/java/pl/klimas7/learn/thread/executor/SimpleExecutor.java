@@ -21,7 +21,7 @@ public class SimpleExecutor {
         ExecutorService executor = Executors.newCachedThreadPool();
         try {
             List<Future<Integer>> futures = executor.invokeAll(Arrays.asList(call1,call2));
-            Integer sum = Integer.valueOf(0);
+            Integer sum = 0;
             for (Future<Integer> future : futures ) {
                 sum += future.get();
             }
@@ -32,13 +32,9 @@ public class SimpleExecutor {
     }
 
     private static void runnable() {
-        Runnable hellos = () -> {
-            IntStream.range(0,1000).forEach(i -> System.out.println("Hello " + i));
-        };
+        Runnable hellos = () -> IntStream.range(0,1000).forEach(i -> System.out.println("Hello " + i + " " + Thread.currentThread().getName()));
 
-        Runnable bays = () -> {
-            IntStream.range(0,1000).forEach(i -> System.out.println("Bay " + i));
-        };
+        Runnable bays = () -> IntStream.range(0,1000).forEach(i -> System.out.println("Bay " + i + " " + Thread.currentThread().getName()));
 
         Executor executor = Executors.newCachedThreadPool();
         executor.execute(hellos);

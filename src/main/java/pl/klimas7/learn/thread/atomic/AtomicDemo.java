@@ -36,9 +36,7 @@ public class AtomicDemo {
 
     private static void start(List<AtomicWorker> atomicThreads) {
         // start all of the threads
-        Iterator<AtomicWorker> i1 = atomicThreads.iterator();
-        while (i1.hasNext()) {
-            AtomicWorker mt = (AtomicWorker) i1.next();
+        for (AtomicWorker mt : atomicThreads) {
             mt.start();
         }
     }

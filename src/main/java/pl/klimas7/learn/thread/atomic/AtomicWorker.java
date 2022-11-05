@@ -2,7 +2,7 @@ package pl.klimas7.learn.thread.atomic;
 
 public class AtomicWorker extends Thread
 {
-  private Counter counter;
+  private final Counter counter;
 
   public AtomicWorker(Counter counter)
   {

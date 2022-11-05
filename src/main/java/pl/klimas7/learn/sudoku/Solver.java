@@ -4,23 +4,24 @@ public class Solver {
     public static final int GRID_SIZE = 9;
 
     private static int[][] grid = {
-            {0, 0, 7, 0, 6, 1, 0, 2, 0},
-            {0, 4, 0, 0, 5, 0, 0, 0, 0},
-            {6, 0, 1, 0, 0, 2, 5, 4, 7},
-            {4, 1, 0, 8, 2, 5, 0, 0, 9},
-            {0, 0, 0, 3, 4, 7, 0, 6, 0},
-            {2, 7, 3, 1, 9, 0, 0, 0, 0},
-            {3, 8, 9, 0, 7, 0, 0, 5, 0},
-            {0, 6, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0}
+            {0, 0, 0, 0, 0, 1, 0, 0, 6},
+            {6, 0, 0, 0, 8, 7, 4, 1, 0},
+            {0, 4, 8, 6, 0, 0, 0, 0, 2},
+            {7, 1, 0, 4, 5, 2, 0, 0, 8},
+            {3, 0, 9, 0, 0, 6, 2, 4, 5},
+            {2, 0, 4, 0, 0, 3, 0, 0, 1},
+            {0, 6, 0, 0, 1, 0, 9, 2, 7},
+            {0, 3, 2, 0, 6, 0, 1, 5, 0},
+            {0, 7, 0, 9, 2, 5, 0, 0, 0}
     };
 
+    private static int recursive_level = 0;
 
     public static void main(String[] args) {
         print(grid);
-        System.out.println("======");
+        System.out.println("[" + recursive_level +"] " + "======");
         if (solve(grid)) {
-            System.out.println("Success");
+            System.out.println("[" + recursive_level +"] " + "Success");
             print(grid);
         } else {
             System.out.println("Something wrong");
@@ -28,23 +29,32 @@ public class Solver {
     }
 
     private static boolean solve(int[][] grid) {
+        recursive_level++;
         for (int row = 0; row < GRID_SIZE; row++) {
             for (int column = 0; column < GRID_SIZE; column++) {
                 if (grid[row][column] == 0) {
                     for (int x = 1; x <= GRID_SIZE; x++) {
                         if (isValid(grid, row, column, x)) {
+                            System.out.println("[" + recursive_level +"] " + row + " " + column + " -> " + x);
                             grid[row][column] = x;
                             if (solve(grid)) {
+                                recursive_level--;
+                                System.out.println("[" + recursive_level +"]");
                                 return true;
                             } else {
+                                System.out.println("[" + recursive_level +"] " + row + " " + column + " -> " + 0);
                                 grid[row][column] = 0;
                             }
                         }
                     }
+                    recursive_level--;
+                    System.out.println("[" + recursive_level +"]");
                     return false;
                 }
             }
         }
+        recursive_level--;
+        System.out.println("[" + recursive_level +"]");
         return true;
     }
 
